@@ -16,7 +16,7 @@ npm run dev
 4.Open the frontend:
 http://localhost:3000/index.html
 
-How the app works
+How the app works:
 Users start on the login page. After a successful login, they are redirected to the workspace creation screen. The JWT token is stored in localStorage and is used for all authenticated API requests.
 When a user creates a workspace, they automatically become the owner and gain permission to manage access levels. A second user who logs in is automatically treated as a member. Members can see the UI elements for changing access levels, but the “Change Access” button is disabled for them. However, the backend does not verify user roles, so a member can intercept the request with Burp Suite, modify the parameters, and successfully escalate their privileges. This setup mirrors the original vulnerability: the frontend restricts the action, but the backend does not enforce any authorization logic.
 
