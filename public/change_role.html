@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Change Access</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+.container {
+    width: 340px;
+    margin: 80px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #ddd;
+    text-align: center;
+}
+input, select, button {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+}
+nav a {
+    margin: 0 8px;
+    text-decoration: none;
+    color: #007bff;
+}
+</style>
+</head>
+
+<body onload="protectPage(); lockButtonIfMember()">
+
+<nav>
+  <a href="index.html">Login</a>
+  <a href="workspace.html">Create Workspace</a>
+  <a href="add-member.html">Add Member</a>
+  <a href="change_role.html">Change Access</a>
+  <a href="#" onclick="logout()">Logout</a>
+</nav>
+
+<div class="container">
+    <h2>Change Access Level</h2>
+
+    <input id="exploitWsId" placeholder="Workspace ID">
+    <input id="exploitUserId" placeholder="Target User ID">
+
+    <select id="newAccess">
+      <option value="read">Read</option>
+      <option value="comment">Comment</option>
+      <option value="edit">Edit</option>
+      <option value="full_access">Full Access</option>
+    </select>
+
+    <button id="changeBtn" onclick="changeAccess()">Change Access</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
