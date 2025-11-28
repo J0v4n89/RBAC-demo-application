@@ -7,15 +7,15 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(express.static("public"));
-// test ruta
+
 app.get("/", (req, res) => {
     res.send("RBAC Demo API running...");
 });
 
-// auth rute
+
 app.use("/api/auth", require("./routes/auth"));
 app.use("/api/workspace", require("./routes/workspace"));
-// konekcija sa MongoDB
+
 mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("MongoDB connected"))
     .catch(err => console.log(err));
