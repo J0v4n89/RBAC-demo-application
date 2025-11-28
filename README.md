@@ -3,11 +3,12 @@ This is a small demo application designed to demonstrate how improper access con
 The goal of the project is to illustrate a common access control flaw: the frontend blocks low-privileged users from changing roles, but the backend does not enforce any server-side permission checks. As a result, a member can use Burp Suite to send a crafted request and successfully escalate privileges.
 
 How to run the application
-1.Install dependencies: npm install
+1.Install dependencies: 
+npm install
 
 2.Create a .env file:
 MONGO_URI=your_mongodb_uri
-JWT_SECRET=some_secret
+JWT_SECRET=secret
 PORT=3000
 
 3.Start the server:
