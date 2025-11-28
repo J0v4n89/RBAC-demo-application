@@ -6,14 +6,14 @@ const WorkspaceSchema = new mongoose.Schema({
         required: true
     },
 
-    // USER who owns the workspace
+   
     owner: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",
         required: true
     },
 
-    // Members array with role + accessLevel
+    
     members: [
         {
             userId: {
