@@ -12,7 +12,7 @@ const UserSchema = new mongoose.Schema({
     },
     role: {
         type: String,
-        default: "member"  // default je member
+        default: "member"  
     }
 });
 
